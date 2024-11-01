@@ -1,21 +1,41 @@
-# LearnElixir
+# Learn Elixir From Official Documentation
 
-**TODO: Add description**
+This is my repository for learning elixir from [official documentation](https://hexdocs.pm/elixir/introduction.html) follow The `GETTING STARTED` section pages.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `learn_elixir` to your list of dependencies in `mix.exs`:
+Clone this project
 
-```elixir
-def deps do
-  [
-    {:learn_elixir, "~> 0.1.0"}
-  ]
-end
+```bash
+# HTTPS
+git clone https://github.com/muzhawir/learn_elixir_from_documentation.git
+
+# GitHub CLI
+gh repo clone muzhawir/learn_elixir_from_documentation
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/learn_elixir>.
+## Todo List
 
+- [x] Basic types
+- [x] Lists and tuples
+- [ ] Pattern matching
+- [ ] case, cond, and if
+- [ ] Anonymous function
+- [ ] Binaries, strings, and charlist
+- [ ] Keyword lists and maps
+- [ ] Modules and functions
+- [ ] Recursion
+- [ ] Enumerables and Streams
+- [ ] Processes
+- [ ] IO and the file system
+- [ ] alias, require, import, and use
+- [ ] Module attributes
+- [ ] Structs
+- [ ] Protocols
+- [ ] Comprehensions
+- [ ] Sigils
+- [ ] try, catch, and rescue
+- [ ] Writing documentation
+- [ ] optional syntax sheet
+- [ ] Erlang libraries
+- [ ] Debugging

@@ -1,21 +1,57 @@
-# LearnElixir
+# Learn Elixir from the Official Documentation
 
-**TODO: Add description**
+This repository is where I’m learning Elixir by following the [official documentation](https://hexdocs.pm/elixir/introduction.html), the "Getting Started" section. Instead of using IEx or [livebook.dev](https://livebook.dev), I chose to jump straight into a Mix project. This approach allows me to start coding immediately and experience the actual workflow of an Elixir project.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `learn_elixir` to your list of dependencies in `mix.exs`:
+Install Erlang and Elixir. This project uses `Erlang v27.1.1` and `Elixir v1.17.3`. The easiest way to manage multiple versions of Erlang and Elixir is with the [vfox version manager](https://github.com/version-fox/vfox).
 
-```elixir
-def deps do
-  [
-    {:learn_elixir, "~> 0.1.0"}
-  ]
-end
+Then, clone this project to your local machine:
+
+```bash
+# Using HTTPS
+git clone https://github.com/muzhawir/learn_elixir_from_documentation.git
+
+# Using GitHub CLI
+gh repo clone muzhawir/learn_elixir_from_documentation
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/learn_elixir>.
+Navigate to the project directory and install the required dependencies:
 
+```bash
+cd learn_elixir_from_documentation
+mix deps.get
+```
+
+## Packages
+
+This repository uses these two packages:
+
+- [credo](https://github.com/rrrene/credo) as a static analysis tool to help me write better code in Elixir and warn me about common mistakes and inconsistencies during coding.
+- [styler](https://github.com/adobe/elixir-styler) is a formatter plugin for Elixir. Actually, if you install this package, you don't need Credo because it's like a combination of `mix format` and `mix credo`. I installed both Credo and Styler just to see how these two packages work together.
+
+## Todo List
+
+- [x] Basic Types
+- [x] Lists and Tuples
+- [ ] Pattern Matching
+- [ ] `case`, `cond`, and `if`
+- [ ] Anonymous Functions
+- [ ] Binaries, Strings, and Charlists
+- [ ] Keyword Lists and Maps
+- [ ] Modules and Functions
+- [ ] Recursion
+- [ ] Enumerables and Streams
+- [ ] Processes
+- [ ] IO and the File System
+- [ ] `alias`, `require`, `import`, and `use`
+- [ ] Module Attributes
+- [ ] Structs
+- [ ] Protocols
+- [ ] Comprehensions
+- [ ] Sigils
+- [ ] `try`, `catch`, and `rescue`
+- [ ] Writing Documentation
+- [ ] Optional Syntax Sheet
+- [ ] Erlang Libraries
+- [ ] Debugging

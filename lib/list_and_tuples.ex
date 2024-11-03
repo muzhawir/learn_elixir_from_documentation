@@ -57,14 +57,19 @@ defmodule ListAndTuples do
   Get head and tail of list
 
   ## Examples
-  iex> ListAndTuples.determine_head_and_tail_list([1, 2, 3])
-  :ok
+    iex> ListAndTuples.determine_head_and_tail_list([1, 2, 3])
+    :ok
   """
   @spec determine_head_and_tail_list(list()) :: :ok
   def determine_head_and_tail_list(list) do
-    list |> hd() |> IO.inspect(label: "Head")
+    head = list |> hd() |> IO.inspect(label: "Head")
 
-    list |> tl() |> IO.inspect(label: "Tail")
+    tail = list |> tl() |> IO.inspect(label: "Tail")
+
+    """
+    Head: #{head}
+    Tail: #{tail}
+    """
 
     :ok
   end

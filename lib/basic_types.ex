@@ -69,7 +69,9 @@ defmodule BasicTypes do
   @spec check_strict_boolean(boolean()) :: String.t()
   def check_strict_boolean(boolean) do
     or_result = boolean or "second_argument_executed"
+
     and_result = boolean and "second_argument_executed"
+
     not_result = not boolean
 
     """
@@ -85,7 +87,9 @@ defmodule BasicTypes do
   @spec check_boolean(boolean()) :: String.t()
   def check_boolean(expression) do
     or_result = expression || "second_argument_executed"
+
     and_result = expression && "second_argument_executed"
+
     not_result = !expression
 
     """

@@ -62,8 +62,9 @@ defmodule ListAndTuples do
   """
   @spec determine_head_and_tail_list(list()) :: :ok
   def determine_head_and_tail_list(list) do
-    IO.inspect(hd(list))
-    IO.inspect(tl(list))
+    list |> hd() |> IO.inspect(label: "Head")
+
+    list |> tl() |> IO.inspect(label: "Tail")
 
     :ok
   end

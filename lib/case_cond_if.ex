@@ -137,6 +137,7 @@ defmodule CaseCondIf do
 
     iex> CaseCondIf.describe_http_method("GET")
     "The GET method requests a representation of the specified resource"
+
   """
   @spec describe_http_method(String.t()) :: String.t()
   def describe_http_method(http_method) do
@@ -159,7 +160,7 @@ defmodule CaseCondIf do
       "HEAD" == http_method ->
         "The HEAD method asks for a response identical to a GET request, but without the response body"
 
-      "OPTIONS" = CA = http_method ->
+      "OPTIONS" == http_method ->
         "The OPTIONS method is used to describe the communication options for the target resource"
 
       true ->

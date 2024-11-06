@@ -4,11 +4,13 @@ defmodule ListAndTuples do
   """
 
   @doc """
-  Count list length
+  Count list length.
+
+  This function receives a list and returns the length of the list.
 
   ## Examples
-  iex> ListAndTuples.count_list_length([1, :atom, true, "elixir"])
-  4
+    iex> ListAndTuples.count_list_length([1, :atom, true, "elixir"])
+    4
   """
   @spec count_list_length(list()) :: non_neg_integer()
   def count_list_length(list) do
@@ -16,11 +18,13 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Get list length
+  Get list length.
+
+  This function receives a list and returns a string with the length of the list.
 
   ## Examples
-  iex> ListAndTuples.get_list_length([1, :atom, true, "elixir"])
-  "The length of the list is: 4"
+    iex> ListAndTuples.get_list_length([1, :atom, true, "elixir"])
+    "The length of the list is: 4"
   """
   @spec get_list_length(list()) :: String.t()
   def get_list_length(list) do
@@ -30,11 +34,14 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Concatenate two lists
+  Concatenate two lists.
+
+  Elixir has a built-in operator for concatenating two lists. In this case, `++` is used.
+  This is called the List Concatenation Operator and requires both operands to be lists.
 
   ## Examples
-  iex> ListAndTuples.concatenated_list([1, 2, 3], [4, 5, 6])
-  [1, 2, 3, 4, 5, 6]
+    iex> ListAndTuples.concatenated_list([1, 2, 3], [4, 5, 6])
+    [1, 2, 3, 4, 5, 6]
   """
   @spec concatenated_list(list(), list()) :: list()
   def concatenated_list(first_list, second_list) do
@@ -42,11 +49,14 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Substract two lists
+  Substract two lists.
+
+  Elixir has a built-in operator for substracting two lists. In this case, `--` is used.
+  This is called the List Substraction Operator and requires both operands to be lists.
 
   ## Examples
-  iex> ListAndTuples.substract_list([1, 2, 3], [4, 5, 6])
-  [1, 2, 3]
+    iex> ListAndTuples.substract_list([1, 2, 3], [4, 5, 6])
+    [1, 2, 3]
   """
   @spec substract_list(list(), list()) :: list()
   def substract_list(first_list, second_list) do
@@ -54,7 +64,10 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Get head and tail of list
+  Get head and tail of list.
+
+  This function receives a list and returns a value with the head and tail of the list.
+  The head is the first element in the list and the tail is the rest of the list.
 
   ## Examples
     iex> ListAndTuples.determine_head_and_tail_list([1, 2, 3])
@@ -75,11 +88,13 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Count tuple size
+  Count tuple size.
+
+  This function receives a tuple and returns a string with the size of the tuple.
 
   ## Examples
-  iex> ListAndTuples.count_tuple_size({1, 2, 3})
-  "The size of the tuple is: 3"
+    iex> ListAndTuples.count_tuple_size({1, 2, 3})
+    "The size of the tuple is: 3"
   """
   @spec count_tuple_size(tuple()) :: String.t()
   def count_tuple_size(tuple) do
@@ -89,11 +104,13 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Get tuple element
+  Get tuple element.
+
+  This function receives a tuple and returns a string with the element at the specified index.
 
   ## Examples
-  iex> ListAndTuples.get_tuple_element({1, 2, 3}, 0)
-  "The element at index 0 is: 1"
+    iex> ListAndTuples.get_tuple_element({1, 2, 3}, 0)
+    "The element at index 0 is: 1"
   """
   @spec get_tuple_element(tuple(), non_neg_integer()) :: String.t()
   def get_tuple_element(tuple, index) do
@@ -103,7 +120,10 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Update tuple element
+  Update tuple element.
+
+  This function takes a tuple, a non-negative integer index, and a new value. It returns a new tuple with the
+  element at the specified index replaced by the new value.
   """
   @spec update_tuple(tuple(), non_neg_integer(), any()) :: String.t()
   def update_tuple(tuple, index, value) do

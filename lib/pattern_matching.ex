@@ -4,7 +4,10 @@ defmodule PatternMatching do
   """
 
   @doc """
-  Tuple pattern match
+  Tuple pattern match.
+
+  This function receives a tuple with exactly 3 elements: an atom status code, an HTTP status code,
+  and a message. The function will return a string with the status, code, and body of the tuple.
 
   ## Examples
     iex> PatternMatching.tuple_match({:ok, 200, "Data fetched successfully"})
@@ -18,7 +21,12 @@ defmodule PatternMatching do
   end
 
   @doc """
-  Tagged tuple pattern match
+  Tagged tuple pattern match.
+
+  This function receives a tuple with exactly 3 elements: an atom status code, an HTTP status code,
+  and a message. The function only works with pattern matching the tuple with exactly 3 elements
+  and the first element of the tuple is atom `:ok`. The function will return a string with the
+  status, code, and body of the tuple.
 
   ## Examples
     iex> PatternMatching.tagged_tuple_match({:ok, 200, "Data fetched successfully"})
@@ -32,7 +40,10 @@ defmodule PatternMatching do
   end
 
   @doc """
-  List pattern match
+  List pattern match.
+
+  This function receives a list with exactly 3 elements: an atom status code, an HTTP status code,
+  and a message. The function will return a string with the status, code, and body of the list.
 
   ## Examples
     iex> PatternMatching.list_match(["SnSV ROG Laptop", 3200, "Electronic"])
@@ -44,7 +55,9 @@ defmodule PatternMatching do
   end
 
   @doc """
-  Head and tail list pattern match
+  Head and tail list pattern match.
+
+  This function recieves a list and return inspected head and tail of the list.
 
   ## Examples
     iex> PatternMatching.head_and_tail_list_match(["SnSV ROG Laptop", 3200, "Electronic"])
@@ -62,7 +75,11 @@ defmodule PatternMatching do
   end
 
   @doc """
-  Pin operator in tuple pattern match
+  Pin operator in tuple pattern match.
+
+  This function receives 2 arguments: a pinned value and a tuple with exactly 3 elements.
+  The function will work with pattern matching the tuple with exactly 3 elements and the
+  first element of the tuple is the pinned value. The function will return an atom `:ok`
 
   ## Examples
     iex> PatternMatching.pin_operator_in_tuple_match(:ok, {:ok, 200, "Data fetched successfully"})
@@ -78,15 +95,19 @@ defmodule PatternMatching do
   end
 
   @doc """
-  Pin operator in list pattern match
+  Pin operator in list pattern match.
+
+  This function receives 2 arguments: a pinned value and a list with any number of elements. The
+  function will work with pattern matching the list with exactly the head value is mathched with
+  the pinned value. The function will return an atom `:ok`
 
   ## Examples
     iex> PatternMatching.pin_operator_in_list_match("SnSV ROG Laptop", ["SnSV ROG Laptop", 3200, "Electronic"])
     :ok
   """
   @spec pin_operator_in_list_match(any(), list()) :: :ok
-  def pin_operator_in_list_match(pinned_value, tuple) do
-    [^pinned_value | _] = tuple
+  def pin_operator_in_list_match(pinned_value, list) do
+    [^pinned_value | _] = list
 
     IO.inspect(pinned_value, label: "Pinned Value")
 

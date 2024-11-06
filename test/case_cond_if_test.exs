@@ -27,4 +27,11 @@ defmodule CaseCondIfTest do
       assert CaseCondIf.check_http_server_error(500) === "500: Yes, this is a server error!"
     end
   end
+
+  describe "CaseCondIf.describe_http_method/1" do
+    test "should return HTTP method explanation in string" do
+      assert CaseCondIf.describe_http_method("GET") ===
+               "The GET method requests a representation of the specified resource"
+    end
+  end
 end

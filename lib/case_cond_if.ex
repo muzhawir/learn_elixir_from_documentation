@@ -123,4 +123,47 @@ defmodule CaseCondIf do
       "#{http_code}: No, this is not a server error!"
     end
   end
+
+  @doc """
+  Describes the HTTP method.
+
+  This function is the example of the use of a `cond` statement in Elixir. It evaluates
+  multiple conditions and returns the corresponding string for the first condition that
+  evaluates to `true`. If none of the conditions match, it returns the default case,
+  "Unknown HTTP method". Including the `true` keyword in the final condition helps prevent
+  a `CondClauseError`.
+
+  ## Examples
+
+    iex> CaseCondIf.describe_http_method("GET")
+    "The GET method requests a representation of the specified resource"
+  """
+  @spec describe_http_method(String.t()) :: String.t()
+  def describe_http_method(http_method) do
+    cond do
+      "GET" == http_method ->
+        "The GET method requests a representation of the specified resource"
+
+      "POST" == http_method ->
+        "The POST method submits data to the specified resource"
+
+      "PUT" == http_method ->
+        "The PUT method replaces all current representations of the target resource with the request payload"
+
+      "DELETE" == http_method ->
+        "The DELETE method deletes the specified resource"
+
+      "PATCH" == http_method ->
+        "The PATCH method applies partial modifications to a resource"
+
+      "HEAD" == http_method ->
+        "The HEAD method asks for a response identical to a GET request, but without the response body"
+
+      "OPTIONS" = CA = http_method ->
+        "The OPTIONS method is used to describe the communication options for the target resource"
+
+      true ->
+        "Unknown HTTP method"
+    end
+  end
 end

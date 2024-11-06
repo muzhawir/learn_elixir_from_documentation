@@ -81,4 +81,23 @@ defmodule CaseCondIf do
       "#{http_code} OK"
     end
   end
+
+  @doc """
+  Checks unless the HTTP status code is not 100 or 200, return string
+  "<http_code>: SOMETHING INCORRECT" if it matches.
+
+  This function is an example of an `unless` statement in Elixir. If the condition evaluates to
+  `true`, the function will return `nil`, and the body within the `do-end` block will not
+  be executed.
+
+  ## Examples
+
+    iex> CaseCondIf.check_issued_response(300)
+    "300: SOMETHING INCORRECT"
+  """
+  def check_issued_response(http_code) do
+    if !(http_code === 100 || http_code === 200) do
+      "#{http_code}: SOMETHING INCORRECT"
+    end
+  end
 end

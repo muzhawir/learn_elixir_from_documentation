@@ -35,7 +35,7 @@ This repository uses these two packages:
 - [x] Basic Types
 - [x] Lists and Tuples
 - [x] Pattern Matching
-- [ ] `case`, `cond`, and `if`
+- [x] `case`, `cond`, and `if`
 - [ ] Anonymous Functions
 - [ ] Binaries, Strings, and Charlists
 - [ ] Keyword Lists and Maps

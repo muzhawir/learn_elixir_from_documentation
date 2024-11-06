@@ -10,6 +10,7 @@ defmodule BasicTypesTest do
                Basic types in elixir are:
                Integer: 1
                Integer in hex: 1
+               Float: 1.0
                Boolean: true
                Atom: #{:atom}
                String: Elixir

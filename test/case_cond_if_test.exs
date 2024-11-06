@@ -9,4 +9,10 @@ defmodule CaseCondIfTest do
                "Successful Response: 200"
     end
   end
+
+  describe "CaseCondIf.check_successful_response/1" do
+    test "should return correct output" do
+      assert CaseCondIf.check_successful_response(200) === "200 OK"
+    end
+  end
 end

@@ -63,4 +63,22 @@ defmodule CaseCondIf do
       _ -> "Invalid response"
     end
   end
+
+  @doc """
+  Checks if the HTTP status code is 200, return "200 OK" if it matches.
+
+  This function is an example of an `if` statement in Elixir. If the condition evaluates to
+  `false` or `nil`, the function will return `nil`, and the body within the `do-end` block will not
+  be executed.
+
+  ## Examples
+
+    iex> CaseCondIf.check_successful_response(200)
+    "200 OK"
+  """
+  def check_successful_response(http_code) do
+    if http_code === 200 do
+      "#{http_code} OK"
+    end
+  end
 end

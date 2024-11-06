@@ -137,7 +137,6 @@ defmodule CaseCondIf do
 
     iex> CaseCondIf.describe_http_method("GET")
     "The GET method requests a representation of the specified resource"
-
   """
   @spec describe_http_method(String.t()) :: String.t()
   def describe_http_method(http_method) do

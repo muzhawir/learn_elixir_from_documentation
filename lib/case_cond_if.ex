@@ -76,6 +76,7 @@ defmodule CaseCondIf do
     iex> CaseCondIf.check_successful_response(200)
     "200 OK"
   """
+  @spec check_successful_response(integer()) :: String.t()
   def check_successful_response(http_code) do
     if http_code === 200 do
       "#{http_code} OK"
@@ -95,9 +96,31 @@ defmodule CaseCondIf do
     iex> CaseCondIf.check_issued_response(300)
     "300: SOMETHING INCORRECT"
   """
+  @spec check_issued_response(integer()) :: String.t()
   def check_issued_response(http_code) do
     if !(http_code === 100 || http_code === 200) do
       "#{http_code}: SOMETHING INCORRECT"
+    end
+  end
+
+  @doc """
+  Checks if the HTTP status code is between 499 and 599, return string
+  "<http_code>: Yes, this is a server error!" if it matches.
+
+  This function is an example of an `if-else` statement in Elixir. If the condition evaluates to
+  `true`, the function will return first body, and the second body will not be executed.
+
+  ## Examples
+
+    iex> CaseCondIf.check_http_server_error(500)
+    "500: Yes, this is a server error!"
+  """
+  @spec check_http_server_error(integer()) :: String.t()
+  def check_http_server_error(http_code) do
+    if http_code >= 499 and http_code <= 599 do
+      "#{http_code}: Yes, this is a server error!"
+    else
+      "#{http_code}: No, this is not a server error!"
     end
   end
 end

@@ -21,4 +21,10 @@ defmodule CaseCondIfTest do
       assert CaseCondIf.check_issued_response(300) === "300: SOMETHING INCORRECT"
     end
   end
+
+  describe "CaseCondIf.check_http_server_error/1" do
+    test "should return correct output" do
+      assert CaseCondIf.check_http_server_error(500) === "500: Yes, this is a server error!"
+    end
+  end
 end

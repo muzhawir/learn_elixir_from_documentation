@@ -6,16 +6,16 @@ defmodule BasicTypes do
   @doc """
   Prints basic types in Elixir.
 
-  In the official documentation, the `Basic Types` section, there are 6 types of basic types:
-  integer, boolean, atom, string, list, and tuple.
+  There are 7 basic types: integer, float, boolean, atom, string, list, and tuple. Here are the
+  definitions of each type:
 
-  - Integer is a number without a fractional part.
-  - Float is a number with a fractional part.
-  - Boolean is either `true` or `false`.
-  - Atom is a constant with a name.
-  - String is a sequence of characters.
-  - List is a collection of values.
-  - Tuple is a collection of values with fixed length.
+  - Integer: a number without a fractional part.
+  - Float: a number with a fractional part.
+  - Boolean: either `true` or `false`.
+  - Atom: a constant with a name.
+  - String: a sequence of characters.
+  - List: a collection of values.
+  - Tuple: a collection of values with a fixed length.
   """
   @spec print_basic_types() :: String.t()
   def print_basic_types do
@@ -44,11 +44,11 @@ defmodule BasicTypes do
   @doc """
   Calculate basic arithmetic.
 
-  Elixir has built-in functions for basic arithmetic operations with artichmetic operators and
-  some functions for more complex operations.
+  Elixir has built-in functions for basic arithmetic operations with arithmetic operators and
+  some functions for more complex operations, such as:
 
   - `+` for addition
-  - `-` for substraction
+  - `-` for subtraction
   - `*` for multiplication
   - `/` for division
   - `div` for integer division
@@ -81,9 +81,9 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Check if the value is an integer or not.
+  Check if the value is an integer.
 
-  This is one of many predicate functions in Elixir that check the type of a value. In this
+  This is one of many type checker functions in Elixir that check the type of a value. In this
   case, `is_integer/1` checks if the value is an integer.
 
   ## Examples
@@ -121,12 +121,12 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Check result to boolean based from input.
+  Check result to boolean based on input.
 
-  This operator is a boolean operator, same as previous one. The only difference is that the
-  this operator allow the first argument are various values beside `true` or `false`.
+  This operator is a boolean operator, same as the previous one. The only difference is that
+  the first argument can be various values besides `true` or `false`.
 
-  `false` and `nil` considered as `false`, all other values are considered as `true`.
+  `false` and `nil` are considered as `false`, all other values are considered as `true`.
   """
   @spec check_boolean(boolean()) :: String.t()
   def check_boolean(expression) do
@@ -144,10 +144,10 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Concenates two strings.
+  Concatenates two strings.
 
   Elixir has a built-in operator for concatenating two strings. In this case, `<>` is used.
-  This is called the Concatenation Operator and requires both arguments to be strings.
+  This is called the String Concatenation Operator and requires both arguments to be strings.
 
   ## Examples
   iex> BasicTypes.concenate_two_strings("Hello", "World")
@@ -162,8 +162,8 @@ defmodule BasicTypes do
   Implement string interpolation.
 
   Elixir has a built-in operator for string interpolation. In this case, `#{}` is used.
-  This is called the Interpolation Operator, we can use it to insert values into a string.
-  The value may be converted to a string.
+  This is called the Interpolation Operator, and it can be used to insert values into a string.
+  The value is converted to a string.
 
   ## Examples
   iex> BasicTypes.implement_string_interpolation(10)
@@ -178,8 +178,8 @@ defmodule BasicTypes do
   Implement string line break.
 
   Strings can have line breaks. This function will insert a line break between two strings using
-  `\n`. The line break is called a newline escape sequence. If we want to print the string with
-   line breaks we need to print using `IO.puts/1`.
+  `\n`, which is called a newline escape sequence. If we want to print the string with
+  line breaks, we need to print using `IO.puts/1`.
 
   ## Examples
   iex> BasicTypes.implement_string_line_break("Hello", "World")

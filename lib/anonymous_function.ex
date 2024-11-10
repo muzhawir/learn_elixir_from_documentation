@@ -4,10 +4,10 @@ defmodule AnonymousFunction do
   """
 
   @doc """
-  Calculate the rectangle of a number.
+  Calculate the rectangle area.
 
-  This function is an example of anonymous function, it recieves two numbers and returns
-  the rectangle.
+  This function is an example of anonymous function, it receives two numbers and returns
+  the rectangle area.
 
   ## Examples
     iex> AnonymousFunction.calculate_rectangle_area(5, 5)
@@ -21,10 +21,10 @@ defmodule AnonymousFunction do
   end
 
   @doc """
-  Calculate the square of a number.
+  Calculate the square area.
 
-  This function is an example of anonymous function with closure, it recieves one number and returns
-  the square.
+  This function is an example of an anonymous function with closure, it receives one number and
+  returns the square.
 
   ## Examples
     iex> AnonymousFunction.calculate_square_area(5)
@@ -38,10 +38,10 @@ defmodule AnonymousFunction do
   end
 
   @doc """
-  Check if the shape is square or rectangle.
+  Determine if the shape is a square or a rectangle.
 
-  This function is an example of anonymous function with clauses and guards,
-  it recieves two numbers and returns the shape type.
+  This function is an example of an anonymous function with clauses and guards.
+  It receives two numbers and returns the shape type.
 
   ## Examples
     iex> AnonymousFunction.square_or_rectangle?(5, 5)
@@ -58,15 +58,16 @@ defmodule AnonymousFunction do
   end
 
   @doc """
-  Calculate the triangle of a number.
+  Calculate the area of a triangle.
 
-  This function is an example of capture operator, it recieves two numbers and returns
-  the triangle.
+  This function is an example of capture operator, it receives two numbers (base and height)
+  and returns the area of the triangle.
 
   ## Examples
     iex> AnonymousFunction.calculate_triangle_area?(5, 5)
     12.5
   """
+  @spec calculate_triangle_area?(number(), number()) :: number()
   def calculate_triangle_area?(base, height) do
     calculate = &(0.5 * &1 * &2)
 

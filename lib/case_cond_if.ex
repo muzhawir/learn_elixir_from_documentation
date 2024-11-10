@@ -11,8 +11,8 @@ defmodule CaseCondIf do
 
   - `{:ok, 200, "Data fetched successfully"}`
   - `{:ok, 308, "Data fetched successfully"}`
-  - `{:error, 404, "Data fetched successfully"}`
-  - `{:error, 500, "Data fetched successfully"}`
+  - `{:error, 404, "Data not found"}`
+  - `{:error, 500, "Internal server error"}`
 
   If none of these patterns match, the function will return `"Invalid response"`.
 
@@ -20,7 +20,6 @@ defmodule CaseCondIf do
 
     iex> CaseCondIf.case_match({:ok, 200, "Data fetched successfully"})
     "Success: Data fetched successfully"
-
   """
   @spec case_match(tuple()) :: String.t()
   def case_match(tuple) do
@@ -34,16 +33,16 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Uses `case` to match a value against multiple patterns until a matching one is found with a guard.
+  Uses `case` to match a value against multiple patterns until a matching one is found with guards.
 
-  This function receives a tuple with exactly 2 elements: an atom status code, and a http status
-  code. Each pattern has a guard that checks if the status code ranges.
+  This function receives a tuple with exactly 2 elements: an atom status code, and an HTTP status
+  code. Each pattern has a guard that checks if the status code is within a specific range.
 
-  - `{:info, 100}` is for informational responses ranged from 100 to 199
-  - `{:ok, 200}` is for successful responses ranged from 200 to 299
-  - `{:redirect, 300}` is for redirection responses ranged from 300 to 399
-  - `{:client_error, 400}` is for client error responses ranged from 400 to 499
-  - `{:server_error, 500}` is for server error responses from 500 to 599
+  - `{:info, 100}` is for informational responses that range from 100 to 199
+  - `{:ok, 200}` is for successful responses that range from 200 to 299
+  - `{:redirect, 300}` is for redirection responses that range from 300 to 399
+  - `{:client_error, 400}` is for client error responses that range from 400 to 499
+  - `{:server_error, 500}` is for server error responses that range from 500 to 599
 
   If none of these patterns match, the function will return `"Invalid response"`.
 
@@ -65,7 +64,7 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks if the HTTP status code is 200, return "200 OK" if it matches.
+  Checks if the HTTP status code is 200, returns "200 OK" if it matches.
 
   This function is an example of an `if` statement in Elixir. If the condition evaluates to
   `false` or `nil`, the function will return `nil`, and the body within the `do-end` block will not
@@ -84,7 +83,7 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks unless the HTTP status code is not 100 or 200, return string
+  Checks if the HTTP status code is not 100 or 200, return string
   "<http_code>: SOMETHING INCORRECT" if it matches.
 
   This function is an example of an `unless` statement in Elixir. If the condition evaluates to
@@ -104,11 +103,11 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks if the HTTP status code is between 499 and 599, return string
+  Checks if the HTTP status code is between 499 and 599, returns string
   "<http_code>: Yes, this is a server error!" if it matches.
 
   This function is an example of an `if-else` statement in Elixir. If the condition evaluates to
-  `true`, the function will return first body, and the second body will not be executed.
+  `true`, the function will return the first body, otherwise it will return the second body.
 
   ## Examples
 
@@ -127,7 +126,7 @@ defmodule CaseCondIf do
   @doc """
   Describes the HTTP method.
 
-  This function is the example of the use of a `cond` statement in Elixir. It evaluates
+  This function is an example of the use of a `cond` statement in Elixir. It evaluates
   multiple conditions and returns the corresponding string for the first condition that
   evaluates to `true`. If none of the conditions match, it returns the default case,
   "Unknown HTTP method". Including the `true` keyword in the final condition helps prevent

@@ -101,8 +101,10 @@ defmodule BasicTypes do
   This operator is a strict boolean operator, expecting the first argument to be `true` or
   `false`. There are 3 short forms:
 
-  - `or` is short for `or/2`, returning `true` if at least one argument is `true`.
-  - `and` is short for `and/2`, returning `true` if both arguments are `true`.
+  - `or` is short for `or/2`, returning `true` if at least one argument is `true`, executing second argument
+    if first argument is `false`.
+  - `and` is short for `and/2`, returning `true` if both arguments are `true`, executing second argument
+    if first argument is `true`.
   - `not` is short for `not/1`, returning `true` if the argument is `false`.
   """
   @spec check_strict_boolean(boolean()) :: String.t()

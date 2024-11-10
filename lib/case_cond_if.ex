@@ -130,7 +130,8 @@ defmodule CaseCondIf do
   multiple conditions and returns the corresponding string for the first condition that
   evaluates to `true`. If none of the conditions match, it returns the default case,
   "Unknown HTTP method". Including the `true` keyword in the final condition helps prevent
-  a `CondClauseError`.
+  a `CondClauseError`. `cond` is equivalent to an `if-else` statement in other languages,
+  but it is more concise.
 
   ## Examples
 

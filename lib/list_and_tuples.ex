@@ -18,22 +18,6 @@ defmodule ListAndTuples do
   end
 
   @doc """
-  Get list length.
-
-  This function receives a list and returns a string with the length of that list.
-
-  ## Examples
-    iex> ListAndTuples.get_list_length([1, :atom, true, "elixir"])
-    "The length of the list is: 4"
-  """
-  @spec get_list_length(list()) :: String.t()
-  def get_list_length(list) do
-    list_length = length(list)
-
-    "The length of the list is: #{list_length}"
-  end
-
-  @doc """
   Concatenate two lists.
 
   Elixir has a built-in operator for concatenating two lists, `++`. This operator requires both

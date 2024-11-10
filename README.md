@@ -1,5 +1,7 @@
 # Learn Elixir from the Official Documentation
 
+[![Elixir CI](https://github.com/muzhawir/learn_elixir_from_documentation/actions/workflows/elixir.yml/badge.svg)](https://github.com/muzhawir/learn_elixir_from_documentation/actions/workflows/elixir.yml)
+
 This repository is where I’m learning Elixir by following the
 [official documentation](https://hexdocs.pm/elixir/introduction.html), the "Getting Started"
 section. Instead of using IEx or [livebook.dev](https://livebook.dev), I chose to jump straight

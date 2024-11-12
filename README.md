@@ -1,7 +1,3 @@
-Here’s a simpler version with easier wording:
-
----
-
 # Learn Elixir from the Official Documentation
 
 [![Elixir CI](https://github.com/muzhawir/learn_elixir_from_documentation/actions/workflows/elixir.yml/badge.svg)](https://github.com/muzhawir/learn_elixir_from_documentation/actions/workflows/elixir.yml)

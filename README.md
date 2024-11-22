@@ -65,7 +65,7 @@ code, and unnecessary tests. Dialyxir makes Dialyzer easier to use in Elixir pro
 - [x] [`case`, `cond`, and `if`](./lib/case_cond_if.ex)
 - [x] [Anonymous Functions](./lib/anonymous_function.ex)
 - [x] [Binaries, Strings, and Charlists](./lib/binaries_strings_and_charlists.ex)
-- [ ] Keyword Lists and Maps
+- [x] [Keyword Lists and Maps](./lib/keyword_lists_and_maps.ex)
 - [ ] Modules and Functions
 - [ ] Recursion
 - [ ] Enumerables and Streams

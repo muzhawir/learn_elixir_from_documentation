@@ -1,13 +1,13 @@
 defmodule ModulesAndFunctions do
   @moduledoc """
-  Section Elixir Documentation #08 - Modules And Functions
+  Section Elixir Documentation #09 - Modules And Functions
   """
 
   @doc """
   Calculate the sum of two numbers.
 
-  This function demonstrates the use of a public function in Elixir, which is a function
-  that can be called from outside the module where it was defined.
+  This function demonstrates the use of a private function in Elixir, which is a function
+  that can only be called from within the module where it was defined.
 
   ## Examples
 
@@ -26,7 +26,7 @@ defmodule ModulesAndFunctions do
   end
 
   @doc """
-  Determine if a number is zero.
+  Determine if a number is zero or not.
 
   This function showcases the use of multiple clauses in Elixir, allowing it to handle
   different input cases using guards and pattern matching.
@@ -47,7 +47,9 @@ defmodule ModulesAndFunctions do
   @doc """
   Join two strings with a separator.
 
-  This function showcases the use of default arguments and the importance of function heads if functions have multiple clauses.
+  This function showcases the use of default arguments and the importance of function heads if
+  functions have multiple clauses. In this case, if the second argument is `nil`, the function
+  will return the first string unchanged.
 
   ## Examples
 

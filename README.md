@@ -17,8 +17,8 @@ before moving on to learning Phoenix.
 ## Other Learning References
 
 I also use the book [Elixir in Action](https://www.manning.com/books/elixir-in-action-third-edition)
-. José Valim, the creator of Elixir, said it’s a top book for Elixir learners. I bought the 3rd
-edition, which is based on Elixir version 1.15.
+, which is a recommended resource for learning Elixir. I purchased the 3rd edition, which is based
+on Elixir version 1.15.
 
 ## Installation
 

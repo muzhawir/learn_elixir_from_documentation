@@ -1,17 +1,17 @@
 defmodule AnonymousFunction do
   @moduledoc """
-  Section Elixir Documentation #05 - Anonymous Function
+  Section Elixir Documentation #06 - Anonymous Function
   """
 
   @doc """
-  Calculate the rectangle area.
+  Calculate the area of a rectangle.
 
-  This function is an example of anonymous function, it receives two numbers and returns
-  the rectangle area.
+  This function demonstrates the use of an anonymous function. It receives two numbers representing
+  the length and the width, and returns the computed area of the rectangle.
 
   ## Examples
-    iex> AnonymousFunction.calculate_rectangle_area(5, 5)
-    25
+      iex> AnonymousFunction.calculate_rectangle_area(5, 5)
+      25
   """
   @spec calculate_rectangle_area(number(), number()) :: number()
   def calculate_rectangle_area(first_number, second_number) when is_number(first_number) and is_number(second_number) do
@@ -23,12 +23,14 @@ defmodule AnonymousFunction do
   @doc """
   Calculate the square area.
 
-  This function is an example of an anonymous function with closure, it receives one number and
-  returns the square.
+  This function demonstrates the use of an anonymous function with closure, it receives one
+  number and returns the calculated area of a square.
 
   ## Examples
-    iex> AnonymousFunction.calculate_square_area(5)
-    25
+
+      iex> AnonymousFunction.calculate_square_area(5)
+      25
+
   """
   @spec calculate_square_area(number()) :: number()
   def calculate_square_area(number) when is_number(number) do
@@ -40,12 +42,17 @@ defmodule AnonymousFunction do
   @doc """
   Determine if the shape is a square or a rectangle.
 
-  This function is an example of an anonymous function with clauses and guards.
-  It receives two numbers and returns the shape type.
+  This function uses an anonymous function with pattern matching and guards.
+  It takes two numbers as input and returns whether the shape is a "Square" or "Rectangle".
 
   ## Examples
-    iex> AnonymousFunction.square_or_rectangle?(5, 5)
-    "Square"
+
+      iex> AnonymousFunction.square_or_rectangle?(5, 5)
+      "Square"
+
+      iex> AnonymousFunction.square_or_rectangle?(5, 10)
+      "Rectangle"
+
   """
   @spec square_or_rectangle?(number(), number()) :: String.t()
   def square_or_rectangle?(first_number, second_number) when is_number(first_number) and is_number(second_number) do
@@ -64,8 +71,10 @@ defmodule AnonymousFunction do
   and returns the area of the triangle.
 
   ## Examples
-    iex> AnonymousFunction.calculate_triangle_area?(5, 5)
-    12.5
+
+      iex> AnonymousFunction.calculate_triangle_area?(5, 5)
+      12.5
+
   """
   @spec calculate_triangle_area?(number(), number()) :: number()
   def calculate_triangle_area?(base, height) do

@@ -4,18 +4,9 @@ defmodule BasicTypes do
   """
 
   @doc """
-  Prints basic types in Elixir.
+  Prints basic types examples in string.
 
-  There are 7 basic types: integer, float, boolean, atom, string, list, and tuple. Here are the
-  definitions of each type:
-
-  - Integer: a number without a fractional part.
-  - Float: a number with a fractional part.
-  - Boolean: either `true` or `false`.
-  - Atom: a constant with a name.
-  - String: a sequence of characters.
-  - List: a collection of values.
-  - Tuple: a collection of values with a fixed length.
+  The basic types in Elixir are: integer, float, boolean, atom, string, list, and tuple.
   """
   @spec print_basic_types() :: String.t()
   def print_basic_types do
@@ -42,19 +33,10 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Calculate basic arithmetic.
+  Calculate basic arithmetic operations.
 
-  Elixir has built-in functions for basic arithmetic operations with arithmetic operators and
-  some functions for more complex operations, such as:
-
-  - `+` for addition
-  - `-` for subtraction
-  - `*` for multiplication
-  - `/` for division
-  - `div` for integer division
-  - `rem` for remainder of division
-  - `round` for rounding
-  - `trunc` for truncating
+  Elixir has built-in arithmetic operators for basic arithmetic operations and some functions
+  for more complex operations.
   """
   @spec calculate_basic_arithmetic(number(), number()) :: String.t()
   def calculate_basic_arithmetic(first_number, second_number) do
@@ -83,12 +65,13 @@ defmodule BasicTypes do
   @doc """
   Check if the value is an integer.
 
-  This is one of many type checker functions in Elixir that check the type of a value. In this
-  case, `is_integer/1` checks if the value is an integer.
+  This function is a type checker that checks if the value is an integer.
 
   ## Examples
-    iex> BasicTypes.integer_value?(10)
-    true
+
+      iex> BasicTypes.integer_value?(10)
+      true
+
   """
   @spec integer_value?(number()) :: boolean()
   def integer_value?(number) do
@@ -96,16 +79,10 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Check result to strict boolean based from input.
+  Check the result of strict boolean operations.
 
-  This operator is a strict boolean operator, expecting the first argument to be `true` or
-  `false`. There are 3 short forms:
-
-  - `or` is short for `or/2`, returning `true` if at least one argument is `true`, executing second argument
-    if first argument is `false`.
-  - `and` is short for `and/2`, returning `true` if both arguments are `true`, executing second argument
-    if first argument is `true`.
-  - `not` is short for `not/1`, returning `true` if the argument is `false`.
+  These operators are strict boolean operators, expecting the first argument to be `true` or
+  `false`. The operations include: `or/2`, `and/2`, and `not/1`.
   """
   @spec check_strict_boolean(boolean()) :: String.t()
   def check_strict_boolean(boolean) do
@@ -123,10 +100,10 @@ defmodule BasicTypes do
   end
 
   @doc """
-  Check result to boolean based on input.
+  Check result of boolean operations.
 
-  This operator is a boolean operator, same as the previous one. The only difference is that
-  the first argument can be various values besides `true` or `false`.
+  This operator is a boolean operator, same as the strict boolean operator. The only difference
+  is that the first argument can be various values besides `true` or `false`.
 
   `false` and `nil` are considered as `false`, all other values are considered as `true`.
   """
@@ -149,11 +126,13 @@ defmodule BasicTypes do
   Concatenates two strings.
 
   Elixir has a built-in operator for concatenating two strings. In this case, `<>` is used.
-  This is called the String Concatenation Operator and requires both arguments to be strings.
+  This operator requires both arguments to be strings.
 
   ## Examples
-  iex> BasicTypes.concenate_two_strings("Hello", "World")
-  "Hello World"
+
+      iex> BasicTypes.concenate_two_strings("Hello", "World")
+      "Hello World"
+
   """
   @spec concenate_two_strings(String.t(), String.t()) :: String.t()
   def concenate_two_strings(first_string, second_string) do
@@ -165,27 +144,31 @@ defmodule BasicTypes do
 
   Elixir has a built-in operator for string interpolation. In this case, `#{}` is used.
   This is called the Interpolation Operator, and it can be used to insert values into a string.
-  The value is converted to a string.
+  The value is converted to a string using the `to_string/1` function.
 
   ## Examples
-  iex> BasicTypes.implement_string_interpolation(10)
-  "The value is 10"
+
+      iex> BasicTypes.implement_string_interpolation(10)
+      "The value is 10"
+
   """
   @spec implement_string_interpolation(any()) :: String.t()
   def implement_string_interpolation(value) do
     "The value is #{value}"
   end
 
-  @doc """
+  @doc ~S"""
   Implement string line break.
 
   Strings can have line breaks. This function will insert a line break between two strings using
-  `\n`, which is called a newline escape sequence. If we want to print the string with
-  line breaks, we need to print using `IO.puts/1`.
+  triple double quotes or using the newline escape sequence (`\n`). If we want to print the
+  string with line breaks, we need to print using `IO.puts/1`.
 
   ## Examples
-  iex> BasicTypes.implement_string_line_break("Hello", "World")
-  "Hello\nWorld\n"
+
+      iex> BasicTypes.implement_string_line_break("Hello", "World")
+      "Hello\nWorld\n"
+
   """
   @spec implement_string_line_break(String.t(), String.t()) :: String.t()
   def implement_string_line_break(first_string, second_string) do

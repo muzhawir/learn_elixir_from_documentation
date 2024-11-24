@@ -6,20 +6,15 @@ defmodule CaseCondIf do
   @doc """
   Uses `case` to match a value against multiple patterns until a matching one is found.
 
-  This function receives a tuple with exactly 3 elements: an atom status code, an HTTP status code,
-  and a message. The function will check for 4 specific patterns:
-
-  - `{:ok, 200, "Data fetched successfully"}`
-  - `{:ok, 308, "Data fetched successfully"}`
-  - `{:error, 404, "Data not found"}`
-  - `{:error, 500, "Internal server error"}`
-
-  If none of these patterns match, the function will return `"Invalid response"`.
+  This function demonstrated uses of `case`. It receives a tuple with exactly 3 elements:
+  an atom status code, an HTTP status code, and a message. The case will match with two elements
+  in the tuple atom `:ok` or `:error` and an HTTP status code and returns the message.
 
   ## Examples
 
-    iex> CaseCondIf.case_match({:ok, 200, "Data fetched successfully"})
-    "Success: Data fetched successfully"
+      iex> CaseCondIf.case_match({:ok, 200, "Data fetched successfully"})
+      "Success: Data fetched successfully"
+
   """
   @spec case_match(tuple()) :: String.t()
   def case_match(tuple) do
@@ -33,23 +28,17 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Uses `case` to match a value against multiple patterns until a matching one is found with guards.
+  Matches a tuple against multiple patterns with guards using `case`.
 
-  This function receives a tuple with exactly 2 elements: an atom status code, and an HTTP status
-  code. Each pattern has a guard that checks if the status code is within a specific range.
-
-  - `{:info, 100}` is for informational responses that range from 100 to 199
-  - `{:ok, 200}` is for successful responses that range from 200 to 299
-  - `{:redirect, 300}` is for redirection responses that range from 300 to 399
-  - `{:client_error, 400}` is for client error responses that range from 400 to 499
-  - `{:server_error, 500}` is for server error responses that range from 500 to 599
-
-  If none of these patterns match, the function will return `"Invalid response"`.
+  This function demonstrates the use of `case` with guards. It takes a tuple with exactly 2
+  elements: an atom status code and an HTTP status code. Each pattern includes a guard clause
+  to check if the status code falls within a specific range.
 
   ## Examples
 
-    iex> CaseCondIf.case_match_with_clause({:ok, 200})
-    "Successful Response: 200"
+      iex> CaseCondIf.case_match_with_clause({:ok, 200})
+      "Successful Response: 200"
+
   """
   @spec case_match_with_clause(tuple()) :: String.t()
   def case_match_with_clause(tuple) when is_tuple(tuple) do
@@ -64,16 +53,17 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks if the HTTP status code is 200, returns "200 OK" if it matches.
+  Checks if the HTTP status code is 200.
 
-  This function is an example of an `if` statement in Elixir. If the condition evaluates to
+  This function demonstrates the use of an `if` in Elixir. If the condition evaluates to
   `false` or `nil`, the function will return `nil`, and the body within the `do-end` block will not
   be executed.
 
   ## Examples
 
-    iex> CaseCondIf.check_successful_response(200)
-    "200 OK"
+      iex> CaseCondIf.check_successful_response(200)
+      "200 OK"
+
   """
   @spec check_successful_response(integer()) :: String.t()
   def check_successful_response(http_code) do
@@ -83,17 +73,16 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks if the HTTP status code is not 100 or 200, return string
-  "<http_code>: SOMETHING INCORRECT" if it matches.
+  Checks if the HTTP status code is not 100 or 200.
 
-  This function is an example of an `unless` statement in Elixir. If the condition evaluates to
-  `true`, the function will return `nil`, and the body within the `do-end` block will not
-  be executed.
+  This function demonstrates the use of an `if` in Elixir. The body within the `do-end` block
+  will be executed only if the condition evaluates to `true`.
 
   ## Examples
 
-    iex> CaseCondIf.check_issued_response(300)
-    "300: SOMETHING INCORRECT"
+      iex> CaseCondIf.check_issued_response(300)
+      "300: SOMETHING INCORRECT"
+
   """
   @spec check_issued_response(integer()) :: String.t()
   def check_issued_response(http_code) do
@@ -103,16 +92,19 @@ defmodule CaseCondIf do
   end
 
   @doc """
-  Checks if the HTTP status code is between 499 and 599, returns string
-  "<http_code>: Yes, this is a server error!" if it matches.
+  Checks if the HTTP status code is between 499 and 599.
 
-  This function is an example of an `if-else` statement in Elixir. If the condition evaluates to
+  This function demonstrates the use of an `if` in Elixir. If the condition evaluates to
   `true`, the function will return the first body, otherwise it will return the second body.
 
   ## Examples
 
-    iex> CaseCondIf.check_http_server_error(500)
-    "500: Yes, this is a server error!"
+      iex> CaseCondIf.check_http_server_error(500)
+      "500: Yes, this is a server error!"
+
+      iex> CaseCondIf.check_http_server_error(400)
+      "400: No, this is not a server error!"
+
   """
   @spec check_http_server_error(integer()) :: String.t()
   def check_http_server_error(http_code) do
@@ -126,17 +118,15 @@ defmodule CaseCondIf do
   @doc """
   Describes the HTTP method.
 
-  This function is an example of the use of a `cond` statement in Elixir. It evaluates
+  This function is demonstrating the use of a `cond` in Elixir. It evaluates
   multiple conditions and returns the corresponding string for the first condition that
-  evaluates to `true`. If none of the conditions match, it returns the default case,
-  "Unknown HTTP method". Including the `true` keyword in the final condition helps prevent
-  a `CondClauseError`. `cond` is equivalent to an `if-else` statement in other languages,
-  but it is more concise.
+  evaluates to `true`. If none of the conditions match, it returns the default case.
 
   ## Examples
 
-    iex> CaseCondIf.describe_http_method("GET")
-    "The GET method requests a representation of the specified resource"
+      iex> CaseCondIf.describe_http_method("GET")
+      "The GET method requests a representation of the specified resource"
+
   """
   @spec describe_http_method(String.t()) :: String.t()
   def describe_http_method(http_method) do

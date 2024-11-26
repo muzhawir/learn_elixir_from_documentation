@@ -67,7 +67,7 @@ code, and unnecessary tests. Dialyxir makes Dialyzer easier to use in Elixir pro
 - [x] [Binaries, Strings, and Charlists](./lib/binaries_strings_and_charlists.ex)
 - [x] [Keyword Lists and Maps](./lib/keyword_lists_and_maps.ex)
 - [x] [Modules and Functions](./lib/modules_and_functions.ex)
-- [ ] Recursion
+- [x] [Recursion](./lib/recursion.ex)
 - [ ] Enumerables and Streams
 - [ ] Processes
 - [ ] IO and the File System

@@ -24,45 +24,50 @@ defmodule Recursion do
   end
 
   @doc """
-  RESULTS OF RECURSION
-  def sum_list([1 | 2, 3], 2)
-  Stack building: head=1, accumulator=2
-  result = sum_list([2 | 3], 1 + 2)
+  Sums a list of numbers using recursion.
 
-  def sum_list([2 | 3], 3)
-  Stack building: head=2, accumulator=3
-  result = sum_list([3], 2 + 3)
+  ## Steps of the recursion
+  For example, if you invoke the function with `sum_list([1, 2, 3], 0)`, the steps are as follows:
 
-  def sum_list([3], 5)
-  Stack building: head=3, accumulator=5
-  result = sum_list([], 3 + 5)
+  def sum_list([1 | 2, 3], 0)
+  Stack building: head=1, accumulator=0
+  result = sum_list([2 | 3], 1 + 0)
 
-  def sum_list([], 8)
-  Base case reached with accumulator=8
-  accumulator => 8
-  result_before => 8
+  def sum_list([2 | 3], 1)
+  Stack building: head=2, accumulator=1
+  result = sum_list([3], 2 + 1)
 
-  Unwinding def sum_list([3], 5)
-  Unwinding: head=3, result=8
-  result_after => 8
-  result_before => 8
+  def sum_list([3], 3)
+  Stack building: head=3, accumulator=3
+  result = sum_list([], 3 + 3)
 
-  Unwinding def sum_list([2 | 3], 3)
-  Unwinding: head=2, result=8
-  result_after => 8
-  result_before => 8
+  def sum_list([], 6)
+  Base case reached with accumulator=6
+  accumulator => 6
+  result_before => 6
 
-  Unwinding def sum_list([1 | 2, 3], 2)
-  Unwinding: head=1, result=8
-  result_after => 8
-  8
+  Unwinding def sum_list([3], 3)
+  Unwinding: head=3, result=6
+  result_after => 6
+  result_before => 6
+
+  Unwinding def sum_list([2 | 3], 1)
+  Unwinding: head=2, result=6
+  result_after => 6
+  result_before => 6
+
+  Unwinding def sum_list([1 | 2, 3], 0)
+  Unwinding: head=1, result=6
+  result_after => 6
+  6
+
+  ## Examples
+
+      iex> Recursion.sum_list([1, 2, 3], 0)
+      6
+
   """
-  def sum_list([], accumulator) do
-    IO.puts("Base case reached with accumulator=#{accumulator}")
-
-    IO.inspect(accumulator, label: "accumulator")
-  end
-
+  @spec sum_list(list(), non_neg_integer()) :: non_neg_integer()
   def sum_list([head | tail], accumulator) do
     IO.puts("Stack building: head=#{head}, accumulator=#{accumulator}")
 
@@ -71,5 +76,11 @@ defmodule Recursion do
     IO.puts("Unwinding: head=#{head}, result=#{result}")
 
     IO.inspect(result, label: "result_after")
+  end
+
+  def sum_list([], accumulator) do
+    IO.puts("Base case reached with accumulator=#{accumulator}")
+
+    IO.inspect(accumulator, label: "accumulator")
   end
 end
